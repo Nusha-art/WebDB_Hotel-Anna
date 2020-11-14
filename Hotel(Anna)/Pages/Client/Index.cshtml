@@ -57,6 +57,9 @@
 @foreach (var item in Model.Clients) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.FIO)
             </td>
             <td>
@@ -76,26 +79,26 @@
             </td>
             <th>
                 @{ try
-                                    {
-                                        @Model.Rooms.First(s => s.ID == item.RoomID).Appellation
-                                    }
-                                    catch
-                                    {
-                                        <p>нет</p>
-                                    } }
+                    {
+                        @Model.Rooms.First(s => s.ID == item.RoomID).Appellation
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    } }
             </th>
             <th>
                 @{ try
-                                    {
-                                        @Model.Employee.First(s => s.ID == item.EmployeeID).FIO
-                                    }
-                                    catch
-                                    {
-                                        <p>нет</p>
-                                    } }
+                    {
+                        @Model.Employee.First(s => s.ID == item.EmployeeID).FIO
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    } }
             </th>
             <th>
-                @{ 
+                @{
                     try
                     {
                         @Model.Services.First(s => s.ID == item.Service1ID).Appellation
@@ -108,23 +111,23 @@
             </th>
             <th>
                 @{ try
-                                    {
-                                        @Model.Services.First(s => s.ID == item.Service2ID).Appellation
-                                    }
-                                    catch
-                                    {
-                                        <p>нет</p>
-                                    } }
+                    {
+                        @Model.Services.First(s => s.ID == item.Service2ID).Appellation
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    } }
             </th>
             <th>
                 @{ try
-                                    {
-                                        @Model.Services.First(s => s.ID == item.Service3ID).Appellation
-                                    }
-                                    catch
-                                    {
-                                        <p>нет</p>
-                                    } }
+                    {
+                        @Model.Services.First(s => s.ID == item.Service3ID).Appellation
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    } }
             </th>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |

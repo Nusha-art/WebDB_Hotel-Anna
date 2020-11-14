@@ -36,6 +36,9 @@
 @foreach (var item in Model.Positions) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Name_of_the_position)
             </td>
             <td>

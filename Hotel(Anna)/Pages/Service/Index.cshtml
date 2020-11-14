@@ -33,6 +33,9 @@
 @foreach (var item in Model.Services) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Appellation)
             </td>
             <td>

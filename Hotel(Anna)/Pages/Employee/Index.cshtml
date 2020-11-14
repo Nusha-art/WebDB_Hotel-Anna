@@ -45,6 +45,9 @@
 @foreach (var item in Model.Employee) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.FIO)
             </td>
             <td>
@@ -66,10 +69,10 @@
             <th>
                 @{ try
                     {
-        @Model.Positions.First(s => s.ID == item.PositionID).Duties }
-                        catch
-                        {
-        <p>нет</p> } }
+                        @Model.Positions.First(s => s.ID == item.PositionID).Name_of_the_position }
+                    catch
+                    {
+                        <p>нет</p> } }
             </th>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |

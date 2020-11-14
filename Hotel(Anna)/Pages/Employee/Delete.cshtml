@@ -13,6 +13,12 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Employee.FIO)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Employee.FIO)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Employee.Age)
         </dt>
         <dd class="col-sm-10">
@@ -36,12 +42,7 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Employee.Address)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Employee.FIO)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Employee.FIO)
-        </dd>
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Employee.Telephone)
         </dt>
@@ -54,10 +55,10 @@
         <dd class="col-sm-10">
             @{ if (Model.Positions != null)
                 {
-    @Model.Positions.Duties }
-else
-{
-    <p>нет</p> } }
+                    @Model.Positions.Name_of_the_position }
+                else
+                {
+                    <p>нет</p> } }
         </dd>
     </dl>
     

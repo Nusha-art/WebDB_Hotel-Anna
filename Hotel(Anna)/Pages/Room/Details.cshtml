@@ -12,17 +12,18 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Rooms.Description)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Rooms.Description)
-        </dd>
-        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Rooms.Appellation)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Rooms.Appellation)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rooms.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rooms.Description)
+        </dd>
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Rooms.Price)
         </dt>
@@ -41,10 +42,10 @@
         <dd class="col-sm-10">
             @{ if (Model.Employee != null)
                 {
-    @Model.Employee.FIO }
-else
-{
-    <p>нет</p> } }
+                    @Model.Employee.FIO }
+                else
+                {
+                    <p>нет</p> } }
         </dd>
     </dl>
 </div>

@@ -1,0 +1,61 @@
+﻿@page
+@model Hotel_Anna_.Pages.FilReq.Filter.FilVmestModel
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms[0].Appellation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms[0].Description)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms[0].Capacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms[0].Employee)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Rooms)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Appellation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Capacity)
+                </td>
+                <th>
+                    @{ try
+                        {
+                            @Model.Employee.First(s => s.ID == item.EmployeeID).FIO}
+                        catch
+                        {
+                            <p>нет</p> } }
+                </th>
+
+            </tr>
+        }
+    </tbody>
+</table>

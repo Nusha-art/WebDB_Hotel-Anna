@@ -38,7 +38,7 @@
                 @{
                     try
                     {
-                        @Model.Rooms.First(r => r.ID == item.ID).Appellation
+                        @Model.Rooms.First(r => r.ID == item.RoomID).Appellation
                     }
                     catch
                     {

@@ -26,13 +26,19 @@
 
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body">
-                <a class="nav-link text-dark" asp-area="" asp-page="Request/PerDep">Отдел кадров</a>
+                <ul>
+                    <li><a class="nav-link text-dark" asp-area="" asp-page="Request/PerDep">Отдел кадров</a></li>
+                </ul>
             </div>
             <div class="card-body">
-                <a class="nav-link text-dark" asp-area="" asp-page="Request/Nomer">Номера</a>
+                <ul>
+                    <li><a class="nav-link text-dark" asp-area="" asp-page="Request/Nomer">Номера</a></li>
+</ul>
             </div>
             <div class="card-body">
-                <a class="nav-link text-dark" asp-area="" asp-page="Request/Klient">Клиенты</a>
+                <ul>
+                    <li><a class="nav-link text-dark" asp-area="" asp-page="Request/Klient">Клиенты</a></li>
+</ul>
             </div>
             
         </div>
@@ -45,6 +51,38 @@
                 </button>
             </h5>
         </div>
-        
+        <div class="card-body">
+
+            <form>
+                Фильтр сотрудников по должности:
+                <select asp-items="Model.SelPosition" name="id" class="form-control-sm" onclick="BtnFun('FilPos', this)">
+                    <option value="-1">не выбран</option>
+                </select>
+                <button asp-page="Filter/FilterPos" class="btn btn-primary FilPos" disabled>Отфильтровать</button>
+            </form>
+
+        </div>
+        <div class="card-body">
+
+            <form>
+                Фильтры для отображения клиентов проживающих в разных номерах:
+                <select asp-items="Model.SelNom" name="ro" class="form-control-sm" onclick="BtnFun('FilNom', this)">
+                    <option value="-1">не выбран</option>
+                </select>
+                <button asp-page="Filter/FilNom" class="btn btn-primary FilNom" disabled>Отфильтровать</button>
+            </form>
+
+        </div>
+        <div class="card-body">
+
+            <form>
+                Вместимость номеров:
+                <select asp-items="Model.SelVmest" name="vm" class="form-control-sm" onclick="BtnFun('FilVmes', this)">
+                    <option value="-1">не выбран</option>
+                </select>
+                <button asp-page="Filter/FilVmest" class="btn btn-primary FilVmes" disabled>Отфильтровать</button>
+            </form>
+
+        </div>
     </div>
 </div>

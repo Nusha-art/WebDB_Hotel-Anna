@@ -21,15 +21,30 @@ namespace Hotel_Anna_.Pages.FilReq
         }
 
         public List<SelectListItem> SelPosition { get; set; }
+        public List<SelectListItem> SelNom { get; set; }
+        public List<SelectListItem> SelVmest { get; set; }
 
         public async Task OnGetAsync()
         {
             SelPosition = _context.Positions.Select(p =>
-                                  new SelectListItem
-                                  {
-                                      Value = p.ID.ToString(),
-                                      Text = p.Name_of_the_position
-                                  }).ToList();
+            new SelectListItem
+            {
+                Value = p.ID.ToString(),
+                Text = p.Name_of_the_position
+            }).ToList();
+
+            SelNom = _context.Rooms.Select(p =>
+            new SelectListItem
+            {
+                Value = p.ID.ToString(),
+                Text = p.Appellation
+            }).ToList();
+            SelVmest = _context.Rooms.Select(p =>
+            new SelectListItem
+            {
+                Value = p.Capacity.ToString(),
+                Text = p.Capacity
+            }).ToList();
         }
     }
 }

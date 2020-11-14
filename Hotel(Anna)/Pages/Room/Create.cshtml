@@ -14,15 +14,16 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Rooms.Description" class="control-label"></label>
-                <input asp-for="Rooms.Description" class="form-control" />
-                <span asp-validation-for="Rooms.Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Rooms.Appellation" class="control-label"></label>
                 <input asp-for="Rooms.Appellation" class="form-control" />
                 <span asp-validation-for="Rooms.Appellation" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="Rooms.Description" class="control-label"></label>
+                <input asp-for="Rooms.Description" class="form-control" />
+                <span asp-validation-for="Rooms.Description" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <label asp-for="Rooms.Price" class="control-label"></label>
                 <input asp-for="Rooms.Price" class="form-control" />

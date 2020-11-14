@@ -1,0 +1,71 @@
+﻿@page
+@model Hotel_Anna_.Pages.FilReq.Filter.FilterPosModel
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].FIO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].Passport_data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].Address)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].Telephone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].ID_Position)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Employee)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FIO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Passport_data)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telephone)
+                </td>
+                <th>
+                   
+                    @Model.Position.Name_of_the_position }
+                        
+                </th>
+                
+            </tr>
+        }
+    </tbody>
+</table>
