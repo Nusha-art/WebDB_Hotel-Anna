@@ -1,0 +1,54 @@
+﻿@page
+@model Hotel_Anna_.Pages.Room.CreateModel
+
+@{
+    ViewData["Title"] = "Изменить";
+}
+
+<h1>Изменить</h1>
+
+<h4>Комната</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Rooms.Description" class="control-label"></label>
+                <input asp-for="Rooms.Description" class="form-control" />
+                <span asp-validation-for="Rooms.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rooms.Appellation" class="control-label"></label>
+                <input asp-for="Rooms.Appellation" class="form-control" />
+                <span asp-validation-for="Rooms.Appellation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rooms.Price" class="control-label"></label>
+                <input asp-for="Rooms.Price" class="form-control" />
+                <span asp-validation-for="Rooms.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rooms.Capacity" class="control-label"></label>
+                <input asp-for="Rooms.Capacity" class="form-control" />
+                <span asp-validation-for="Rooms.Capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rooms.EmployeeID" class="control-label"></label>
+                <input asp-for="Rooms.EmployeeID" class="form-control" />
+                <span asp-validation-for="Rooms.EmployeeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться обратно</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

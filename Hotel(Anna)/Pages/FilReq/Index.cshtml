@@ -1,0 +1,50 @@
+﻿@page
+@model Hotel_Anna_.Pages.FilReq.IndexModel
+@{
+}
+<script>
+    function BtnFun(ClassName, obj) {
+        var value = obj.value;
+        var name = "." + ClassName;
+        if (value[0] != "-") {
+            $(name).prop('disabled', false);
+        }
+        else {
+            $(name).prop('disabled', true);
+        }
+    }
+</script>
+<div class="accordion" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Запросы
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+                <a class="nav-link text-dark" asp-area="" asp-page="Request/PerDep">Отдел кадров</a>
+            </div>
+            <div class="card-body">
+                <a class="nav-link text-dark" asp-area="" asp-page="Request/Nomer">Номера</a>
+            </div>
+            <div class="card-body">
+                <a class="nav-link text-dark" asp-area="" asp-page="Request/Klient">Клиенты</a>
+            </div>
+            
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed text-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Фильтры
+                </button>
+            </h5>
+        </div>
+        
+    </div>
+</div>

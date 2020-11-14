@@ -1,0 +1,100 @@
+﻿@page
+@model Hotel_Anna_.Pages.FilReq.Request.KlientModel
+@{
+}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                Клиент
+            </th>
+            <th>
+                Номер
+            </th>
+            <th>
+                Услуга 1
+            </th>
+            <th>
+                Услуга 2
+            </th>
+            <th>
+                Услуга 3
+            </th>
+            <th>
+                Сотрудник
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int num = 0; num < Model.Clients.Count; num++)
+        {
+            var item = Model.Clients[num];
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FIO)
+            </td>
+
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Rooms.First(r => r.ID == item.ID).Appellation
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Services1.First(r => r.ID == item.Service1ID).Appellation
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Services2.First(r => r.ID == item.Service2ID).Appellation
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Services3.First(r => r.ID == item.Service3ID).Appellation
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Employees.First(r => r.ID == item.ID).FIO
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

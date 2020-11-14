@@ -1,0 +1,41 @@
+﻿@page
+@model Hotel_Anna_.Pages.FilReq.Request.PerDepModel
+@{
+    ViewData["Title"] = "Отдел кадров";
+}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                Сотрудник
+            </th>
+            <th>
+                Должность
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int num = 0; num < Model.Employees.Count; num++)
+        {
+            var item = Model.Employees[num];
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FIO)
+                </td>
+                
+                <td>
+                    @{
+                        try
+                        {
+                            @Model.Position.First(r => r.ID == item.ID).Name_of_the_position
+                        }
+                        catch
+                        {
+                            <p>нет</p>
+                        }
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

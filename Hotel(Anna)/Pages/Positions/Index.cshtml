@@ -1,0 +1,59 @@
+﻿@page
+@model Hotel_Anna_.Pages.Positions.IndexModel
+
+@{
+    ViewData["Title"] = "Список должностей";
+}
+
+<h1>Список должностей</h1>
+
+<p>
+    <a asp-page="Create">Добавить должность</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Positions[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Positions[0].Name_of_the_position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Positions[0].Duties)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Positions[0].Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Positions[0].Requirements)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Positions) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name_of_the_position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duties)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Requirements)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

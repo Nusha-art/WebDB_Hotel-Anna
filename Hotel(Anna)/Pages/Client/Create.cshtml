@@ -1,0 +1,80 @@
+﻿@page
+@model Hotel_Anna_.Pages.Client.CreateModel
+
+@{
+    ViewData["Title"] = "Добавить";
+}
+
+<h1>Добавить</h1>
+
+<h4>Клиент</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Clients.FIO" class="control-label"></label>
+                <input asp-for="Clients.FIO" class="form-control" />
+                <span asp-validation-for="Clients.FIO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clients.Age" class="control-label"></label>
+                <input asp-for="Clients.Age" class="form-control" />
+                <span asp-validation-for="Clients.Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clients.Check_in_date" class="control-label"></label>
+                <input asp-for="Clients.Check_in_date" class="form-control" />
+                <span asp-validation-for="Clients.Check_in_date" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Clients.Price" class="control-label"></label>
+                <input asp-for="Clients.Price" class="form-control" />
+                <span asp-validation-for="Clients.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clients.Passport_data" class="control-label"></label>
+                <input asp-for="Clients.Passport_data" class="form-control" />
+                <span asp-validation-for="Clients.Passport_data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clients.RoomID" class="control-label"></label>
+                <input asp-for="Clients.RoomID" class="form-control" />
+                <span asp-validation-for="Clients.RoomID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clients.EmployeeID" class="control-label"></label>
+                <input asp-for="Clients.EmployeeID" class="form-control" />
+                <span asp-validation-for="Clients.EmployeeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clients.Service1ID" class="control-label"></label>
+                <input asp-for="Clients.Service1ID" class="form-control" />
+                <span asp-validation-for="Clients.Service1ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clients.Service2ID" class="control-label"></label>
+                <input asp-for="Clients.Service2ID" class="form-control" />
+                <span asp-validation-for="Clients.Service2ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clients.Service3ID" class="control-label"></label>
+                <input asp-for="Clients.Service3ID" class="form-control" />
+                <span asp-validation-for="Clients.Service3ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться обратно</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

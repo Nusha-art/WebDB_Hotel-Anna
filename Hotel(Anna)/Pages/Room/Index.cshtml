@@ -1,0 +1,70 @@
+﻿@page
+@model Hotel_Anna_.Pages.Room.IndexModel
+
+@{
+    ViewData["Title"] = "Список комнат";
+}
+
+<h1>Список комнат</h1>
+
+<p>
+    <a asp-page="Create">Добавить комнату</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms[0].Appellation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms[0].Description)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms[0].Capacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms[0].Employee)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Rooms) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Appellation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capacity)
+            </td>
+            <th>
+                @{ try
+                    {
+        @Model.Employee.First(s => s.ID == item.EmployeeID).FIO}
+    catch
+    {
+        <p>нет</p> } }
+            </th>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
