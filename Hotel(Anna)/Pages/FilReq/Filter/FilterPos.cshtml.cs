@@ -26,7 +26,7 @@ namespace Hotel_Anna_.Pages.FilReq.Filter
             {
                 return NotFound();
             }
-            Position = _context.Positions.First(m=>m.ID==id);
+            Position = await _context.Positions.FirstOrDefaultAsync(m=>m.ID==id);
             if (Position == null)
             {
                 return NotFound();
