@@ -7,27 +7,28 @@
     <thead>
         <tr>
             <th>
-                Сотрудник
-            </th>
-            <th>
                 Номер
             </th>
+            <th>
+                Сотрудник
+            </th>
+
         </tr>
     </thead>
     <tbody>
-        @for (int num = 0; num < Model.Employees.Count; num++)
+        @for (int num = 0; num < Model.Rooms.Count; num++)
         {
-            var item = Model.Employees[num];
+            var item = Model.Rooms[num];
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.FIO)
+                    @Html.DisplayFor(modelItem => item.Appellation)
                 </td>
 
                 <td>
                     @{
                         try
                         {
-                            @Model.Rooms.First(r => r.ID == item.ID).Appellation
+                            @Model.Employees.First(r => r.ID == item.EmployeeID).FIO
                         }
                         catch
                         {

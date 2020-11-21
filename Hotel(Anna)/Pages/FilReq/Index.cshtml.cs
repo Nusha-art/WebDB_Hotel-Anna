@@ -24,7 +24,7 @@ namespace Hotel_Anna_.Pages.FilReq
         public List<SelectListItem> SelNom { get; set; }
         public List<SelectListItem> SelVmest { get; set; }
 
-        public async Task OnGetAsync()
+        public IActionResult OnGet()
         {
             SelPosition = _context.Positions.Select(p =>
             new SelectListItem
@@ -45,6 +45,7 @@ namespace Hotel_Anna_.Pages.FilReq
                 Value = p.Capacity.ToString(),
                 Text = p.Capacity
             }).ToList();
+            return Page();
         }
     }
 }
